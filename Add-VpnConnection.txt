@@ -1,0 +1,1 @@
+Add-VpnConnection -Name "$ConnectionName" -ServerAddress "$ServerAddress" -TunnelType L2tp -AllUserConnection -L2tpPsk "$PresharedKey" -AuthenticationMethod Pap -Force
