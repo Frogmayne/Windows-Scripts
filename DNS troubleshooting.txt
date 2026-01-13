@@ -1,0 +1,39 @@
+# Basic DNS lookup
+nslookup example.com
+Resolve-DnsName example.com
+
+# Check specific record types
+Resolve-DnsName example.com -Type A
+Resolve-DnsName example.com -Type MX
+Resolve-DnsName example.com -Type TXT
+Resolve-DnsName example.com -Type NS
+
+# Query specific DNS server
+Resolve-DnsName example.com -Server 8.8.8.8
+nslookup example.com 8.8.8.8
+
+# View local DNS cache
+Get-DnsClientCache
+
+# Clear DNS cache
+Clear-DnsClientCache
+ipconfig /flushdns
+
+# Check DNS client settings
+Get-DnsClientServerAddress
+
+# Test DNS resolution with details
+Test-NetConnection example.com -Port 53
+Test-Connection example.com
+
+# View DNS server zones (on DNS server)
+Get-DnsServerZone
+
+# Check DNS server cache (on DNS server)
+Get-DnsServerCache
+
+# View forwarders (on DNS server)
+Get-DnsServerForwarder
+
+# Show all DNS records in a zone (on DNS server)
+Get-DnsServerResourceRecord -ZoneName example.com
